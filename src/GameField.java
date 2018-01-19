@@ -26,6 +26,9 @@ public class GameField extends JPanel implements ActionListener {
 	private int score;
 	private int status = 1;
 	boolean oneself = false;
+	private Image one;
+	private Image two;
+	private Image three;
 
 	public GameField() {
 		setBackground(Color.GRAY);
@@ -35,6 +38,7 @@ public class GameField extends JPanel implements ActionListener {
 		InitGame();
 
 	}
+	//coment12121212
 
 	public void InitGame() {
 		snake_segment = 3;
@@ -83,6 +87,8 @@ public class GameField extends JPanel implements ActionListener {
 
 		ImageIcon iid_chrome = new ImageIcon("dot_chrome.png");
 		dot = iid_chrome.getImage();
+
+
 
 	}
 

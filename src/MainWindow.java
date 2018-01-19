@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -47,6 +48,12 @@ public class MainWindow extends JFrame
         jFrame.setJMenuBar(jMenuBar);
         jFrame.revalidate();
         file.setMnemonic('G');
+        file.add(new JMenuItem("Set_back", 'B')).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     static JFrame jFrame = getFrame();
@@ -58,6 +65,8 @@ public class MainWindow extends JFrame
         jFrame.setBounds(1920/2-370/2, 1080/2-390/2, 370, 400);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setResizable(false);
+        jFrame.getContentPane().setBackground(Color.DARK_GRAY);
+        String hello = "Welcome to Snake";
         return jFrame;
 
 
