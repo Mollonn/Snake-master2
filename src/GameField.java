@@ -25,6 +25,7 @@ public class GameField extends JPanel implements ActionListener {
 	private boolean inGame = true;
 	private int score;
 	private int status = 1;
+	boolean oneself = false;
 
 	public GameField() {
 		setBackground(Color.GRAY);
@@ -79,7 +80,7 @@ public class GameField extends JPanel implements ActionListener {
 	public void loadImages() {
 		ImageIcon iia = new ImageIcon("apple.png");
 		apple = iia.getImage();
-		
+
 		ImageIcon iid_chrome = new ImageIcon("dot_chrome.png");
 		dot = iid_chrome.getImage();
 
