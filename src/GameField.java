@@ -94,6 +94,7 @@ public class GameField extends JPanel implements ActionListener {
 			for (int i = 0; i < snake_segment; i++) {
 				g.drawImage(dot, x[i], y[i], this);
 			}
+			oneself = false;
 		} else {
 			String str = "Game Over";
 			g.setColor(Color.white);
@@ -169,29 +170,34 @@ public class GameField extends JPanel implements ActionListener {
 	class FieldKeyListener extends KeyAdapter {
 		@Override
 		public void keyPressed(KeyEvent e) {
-			super.keyPressed(e);
-			int key = e.getKeyCode();
-			if (key == KeyEvent.VK_LEFT && !right) {
-				left = true;
-				up = false;
-				down = false;
-			}
-			if (key == KeyEvent.VK_RIGHT && !left) {
-				right = true;
-				up = false;
-				down = false;
-			}
+			if(!oneself){
+				super.keyPressed(e);
+				int key = e.getKeyCode();
+				if (key == KeyEvent.VK_LEFT && !right) {
+					left = true;
+					up = false;
+					down = false;
+				}
+				if (key == KeyEvent.VK_RIGHT && !left) {
+					right = true;
+					up = false;
+					down = false;
+				}
 
-			if (key == KeyEvent.VK_UP && !down) {
-				right = false;
-				up = true;
-				left = false;
-			}
-			if (key == KeyEvent.VK_DOWN && !up) {
-				right = false;
-				down = true;
-				left = false;
+				if (key == KeyEvent.VK_UP && !down) {
+					right = false;
+					up = true;
+					left = false;
+				}
+				if (key == KeyEvent.VK_DOWN && !up) {
+					right = false;
+					down = true;
+					left = false;
+				}
+
+				oneself = true;
 			}
 		}
 	}
+
 }
